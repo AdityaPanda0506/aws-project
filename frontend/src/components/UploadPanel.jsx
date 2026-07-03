@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import axios from "axios";
+import api from "../services/api";
 
 import {
   Card,
@@ -68,18 +68,22 @@ export default function UploadPanel({ onUpload }) {
       setLoading(true);
       setProgress(0);
 
-      const res = await axios.post(
-        "http://127.0.0.1:8000/upload/",
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-          onUploadProgress: (evt) => {
-            if (evt.total) {
-              setProgress(Math.round((evt.loaded / evt.total) * 100));
+      const res = await api.post(
+            "/upload/",
+            formData,
+            {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                },
+                onUploadProgress: (evt) => {
+                    if (evt.total) {
+                        setProgress(
+                            Math.round((evt.loaded / evt.total) * 100)
+                        );
+                    }
+                }
             }
-          }
-        }
-      );
+        );
 
       onUpload(res.data);
       setSuccess(true);
