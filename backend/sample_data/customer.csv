@@ -1,0 +1,11 @@
+CustomerID,Name,Age,Email,Salary
+101,John,25,john@gmail.com,40000
+102,Alice,28,alice@gmail.com,50000
+102,Alice,28,alice@gmail.com,50000
+103,,32,bobgmail.com,-3000
+104,Mike,abc,mike@gmail.com,45000
+105,Sarah,24,sarah@gmail.com,
+106,David,27,david@gmail.com,42000
+107,Emma,29,emma@gmail,55000
+108,Chris,45,chris@gmail.com,900000
+109,Lisa,19,lisa@gmail.com,38000

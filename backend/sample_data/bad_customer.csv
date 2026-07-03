@@ -1,0 +1,11 @@
+CustomerID,Name,Age,Email,Salary,JoiningDate
+101,,25,johngmail.com,-5000,2035-01-01
+101,,25,johngmail.com,-5000,2035-01-01
+102,Alice,,alicegmail.com,-7000,2040-05-20
+103,,,abc,-10000,2050-12-31
+104,Bob,-5,bobgmail,-2000,2038-09-12
+105,,35,test,-9000,2045-07-14
+106,,,,,
+107,Chris,30,chrisgmail.com,999999999,2036-08-20
+108,David,-10,david@,-500,2042-01-15
+109,Eva,,eva.gmail.com,-12000,2039-03-18
