@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import api from "../services/api";
 
 import {
   Card,
@@ -49,8 +49,8 @@ export default function UploadCard({ onUpload }) {
 
       setLoading(true);
 
-      const response = await axios.post(
-        "http://127.0.0.1:8000/upload/",
+      const response = await api.post(
+        "/upload/",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
