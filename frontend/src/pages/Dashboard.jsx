@@ -37,37 +37,41 @@ export default function Dashboard() {
 
     const [error,setError]=useState("");
 
-    async function loadDashboard(){
+    async function loadDashboard() {
 
-        try{
+    setLoading(true);
 
-            setLoading(true);
+    setError("");
 
-            const dashboardRes=await getDashboard();
+    while (true) {
 
-            const historyRes=await getHistory();
+        try {
+
+            const dashboardRes = await getDashboard();
+
+            const historyRes = await getHistory();
 
             setDashboard(dashboardRes.data);
 
             setHistory(historyRes.data);
 
-        }
-
-        catch(err){
-
-            console.log(err);
-
-            setError("Unable to connect to backend.");
+            break;
 
         }
 
-        finally{
+        catch (err) {
 
-            setLoading(false);
+            console.log("Waiting for backend...", err);
+
+            await new Promise(resolve => setTimeout(resolve, 5000));
 
         }
 
     }
+
+    setLoading(false);
+
+}
 
     useEffect(()=>{
 
@@ -103,7 +107,7 @@ export default function Dashboard() {
 
                 <Typography sx={{ color: "#9CA3AF", fontWeight: 500 }}>
 
-                    Loading dashboard…
+                    Starting CloudGuard...
 
                 </Typography>
 
