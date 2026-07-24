@@ -69,8 +69,10 @@ export default function HistoryTable({ history = [] }) {
 
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
-  const filtered = history.filter(item =>
-    item.filename.toLowerCase().includes(search.toLowerCase())
+  const historyArray = Array.isArray(history) ? history : [];
+
+  const filtered = historyArray.filter(item =>
+    item && item.filename && item.filename.toLowerCase().includes(search.toLowerCase())
   );
 
   const rows = filtered.slice(

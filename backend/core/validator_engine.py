@@ -4,8 +4,8 @@ import uuid
 import pandas as pd
 
 from core.column_detector import detect_dataset
-from validators.data_validator import validate_data
-from validators.statistical_validator import validate_statistics
+from data_validators.data_validator import validate_data
+from data_validators.statistical_validator import validate_statistics
 from core.quality_score import calculate_quality_score
 
 from reports.json_report import generate_report

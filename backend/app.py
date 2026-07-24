@@ -38,4 +38,10 @@ def home():
         "status": "Running"
     }
 
+@app.get("/health")
+def health():
+    return {
+        "status": "running"
+    }
+    
 app.include_router(upload_router)
